@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clement Mwaba Chilufya | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Welcome Modal -->
+  <div id="welcome-modal" class="welcome-overlay">
+    <div class="welcome-content">
+      <h1>Welcome to the Life of Cle</h1>
+      <p>Step inside to discover my journey, my core passions, my academic learning roadmap, and ways to get in touch.</p>
+      <button id="enter-site-btn" class="btn">Explore My World →</button>
+    </div>
+  </div>
+
+  <!-- App Wrapper -->
+  <div class="app-layout">
+
+    <!-- Mobile Top Header Bar -->
+    <div class="mobile-header">
+      <span class="sub-title">Clement Mwaba Chilufya</span>
+      <button id="mobile-menu-toggle" class="mobile-toggle-btn" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Side Navigation Bar -->
+    <aside id="sidebar-nav" class="sidebar">
+      <div class="header-brand">
+        <p class="sub-title">WELCOME TO THE LIFE OF</p>
+        <h1>Clement Mwaba Chilufya</h1>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#about">About</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#projects">Projects</a>
+        <a href="#learning-plan">Academics</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#photos">Gallery</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="theme-toggle-btn" class="theme-toggle"><span id="theme-icon">☀️</span> <span id="theme-text">Light Mode</span></button>
+      </div>
+    </aside>
+
+    <!-- Main Content Body -->
+    <main class="main-content">
+      <!-- About Section -->
+      <section id="about" class="content-section">
+        <span class="label">ABOUT ME</span>
+        <h2>A little about my journey</h2>
+        <p>I am a dedicated 3rd-year Computer Science student at Mulungushi University, based in Solwezi, with a strong passion for software engineering, system architecture, and modern web development. Transitioning into computer science has fueled my drive to solve complex problems through clean code and intuitive user interface design. Beyond academic coursework in digital design, object-oriented programming, and statistics, I am constantly exploring full stack web technologies and hands on software design patterns. My goal is to leverage my computational skills and practical mindset to engineer scalable applications, contribute to impactful open source projects, and build a fulfilling career in technology.</p>
+      </section>
+
+      <!-- Passions Section -->
+      <section id="hobbies" class="content-section">
+        <span class="label">PASSIONS</span>
+        <h2>Hobbies & Interests</h2>
+        <ul class="styled-list">
+          <li>Software development, system design, and building web interfaces.</li>
+          <li>Automotive mechanics, vehicle diagnostics, and engine troubleshooting.</li>
+          <li>Listening to South African Afro-pop, Afro-house, and Amapiano music.</li>
+          <li>Cooking and coming up with original recipes.</li>
+          <li>Growing chickens naturally with herbs and natural remedies.</li>
+        </ul>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="content-section">
+        <span class="label">PORTFOLIO</span>
+        <h2>Projects & Skills Showcase</h2>
+        <div class="filter-controls">
+          <input type="text" id="filter-search-input" placeholder="Search projects or skills...">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="project">Projects</button>
+            <button class="filter-btn" data-category="skill">Skills</button>
+            <button class="filter-btn" data-category="coursework">Coursework</button>
+            <button id="filter-reset-btn" class="reset-btn">Reset</button>
+          </div>
+        </div>
+        <div id="projects-grid" class="projects-grid"></div>
+        <p id="no-results-msg" class="error-box hidden">No matching items found. Click Reset to view all.</p>
+      </section>
+
+      <!-- Learning Plan -->
+      <section id="learning-plan" class="content-section">
+        <span class="label">ACADEMICS</span>
+        <h2>My Learning Plan</h2>
+        <ol class="styled-list">
+          <li><strong>Digital Design:</strong> Logic gates, sequential circuits, and hardware abstraction.</li>
+          <li><strong>Computer Architecture:</strong> CPU execution, registers, and memory management.</li>
+          <li><strong>Statistics:</strong> Probability theory, hypothesis testing, and quantitative analysis.</li>
+          <li><strong>OOP (Java):</strong> Object-oriented principles, modular code, and JavaFX UI.</li>
+          <li><strong>Web Technologies:</strong> Semantic HTML5, CSS layout design, and responsive interfaces.</li>
+        </ol>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr><th>Course</th><th>Focus Area</th><th>Action Item</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Digital Design</td><td>Logic & Boolean Algebra</td><td>Simulate circuit diagrams.</td></tr>
+              <tr><td>Computer Architecture</td><td>CPU Registers & Memory</td><td>Analyze assembly operations.</td></tr>
+              <tr><td>Statistics</td><td>Probability Distributions</td><td>Solve quantitative data sets.</td></tr>
+              <tr><td>OOP & Java</td><td>Class Hierarchies & UI</td><td>Build modular Java applications.</td></tr>
+              <tr><td>Web Technologies</td><td>CSS Grid / Flexbox</td><td>Style responsive web layouts.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Study Hours Calculator -->
+      <section id="calculator" class="content-section">
+        <span class="label">TIME MANAGEMENT</span>
+        <h2>Study Hours Calculator</h2>
+        <form id="study-calc-form" class="form-grid">
+          <div>
+            <label for="hours-per-day">Hours / Day (0.5 – 24)</label>
+            <input type="number" id="hours-per-day" step="0.5" required>
+            <span id="hours-error" class="err-text"></span>
+          </div>
+          <div>
+            <label for="days-per-week">Days / Week (1 – 7)</label>
+            <input type="number" id="days-per-week" min="1" max="7" required>
+            <span id="days-error" class="err-text"></span>
+          </div>
+          <button type="submit" class="btn">Calculate Hours</button>
+        </form>
+        <div id="calc-results" class="results-card hidden">
+          <h3>Calculation Summary</h3>
+          <p><strong>Weekly:</strong> <span id="res-weekly-hours">0</span> hrs | <strong>Monthly:</strong> <span id="res-monthly-hours">0</span> hrs | <strong>Semester:</strong> <span id="res-semester-hours">0</span> hrs</p>
+          <p id="calc-feedback-note" class="note"></p>
+        </div>
+      </section>
+
+      <!-- Photo Gallery -->
+      <section id="photos" class="content-section">
+        <span class="label">MEMORIES</span>
+        <h2>Photo Gallery</h2>
+        <div id="gallery-container" class="gallery-grid"></div>
+      </section>
+
+      <div id="gallery-lightbox" class="lightbox hidden">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+          <button id="lightbox-close" class="close-btn">&times;</button>
+          <button id="lightbox-prev" class="nav-btn">&#10094;</button>
+          <div class="lightbox-img-wrapper">
+            <img id="lightbox-img" src="" alt="">
+            <p id="lightbox-caption"></p>
+            <span id="lightbox-counter"></span>
+          </div>
+          <button id="lightbox-next" class="nav-btn">&#10095;</button>
+        </div>
+      </div>
+
+      <!-- Media Section -->
+      <section id="media" class="content-section">
+        <span class="label">MEDIA</span>
+        <h2>My Media</h2>
+        <div class="media-card">
+          <h3>Intro Video</h3>
+          <video controls poster="photos/photo2.jpeg" class="media-player">
+            <source src="videos/intro.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="media-card">
+          <h3>Audio Clip</h3>
+          <audio controls class="media-player">
+            <source src="videos/Audio.mp4" type="audio/mpeg">
+          </audio>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section id="contact" class="content-section">
+        <span class="label">GET IN TOUCH</span>
+        <h2>Contact Me</h2>
+        <form id="contact-form" class="form-stack">
+          <div>
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" required>
+            <span id="name-error" class="err-text"></span>
+          </div>
+          <div>
+            <label for="emailAddress">Email Address *</label>
+            <input type="email" id="emailAddress" required>
+            <span id="email-error" class="err-text"></span>
+          </div>
+          <div>
+            <label for="topic">Topic</label>
+            <select id="topic">
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Project Collaboration">Project Collaboration</option>
+              <option value="Academic Discussion">Academic Discussion</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message *</label>
+            <textarea id="message" rows="4" required></textarea>
+            <span id="message-error" class="err-text"></span>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div id="contact-summary-card" class="results-card hidden success-border">
+          <h3>Form Validated Successfully</h3>
+          <p><strong>Name:</strong> <span id="summary-name"></span></p>
+          <p><strong>Email:</strong> <span id="summary-email"></span></p>
+          <p><strong>Topic:</strong> <span id="summary-topic"></span></p>
+          <blockquote id="summary-message"></blockquote>
+        </div>
+      </section>
+
+      <footer>
+        <p>“This is the story for the history books.”</p>
+      </footer>
+    </main>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
